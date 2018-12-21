@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 -->
+        <setting name="useGeneratedKeys" value="true" />
+        <!-- 使用列别名替换列名 默认:true -->
+        <setting name="useColumnLabel" value="true" />
+        <!-- 开启驼峰命名转换:Table {create_time} -> Entity {createTime} -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+
+    <plugins>
+        <!--注意这里要写成PageInterceptor, 5.0之前的版本都是写PageHelper, 5.0之后要换成PageInterceptor-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--<property name="helperDialect" value="mysql" />-->
+            <property name="reasonable" value="true" />
+        </plugin>
+    </plugins>
+</configuration>

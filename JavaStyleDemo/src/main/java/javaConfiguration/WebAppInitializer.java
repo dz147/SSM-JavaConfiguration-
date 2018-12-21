@@ -7,10 +7,11 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import javax.servlet.Filter;
 import java.util.logging.Logger;
+
 /*
-* Spring Mvc的配置
-*createDate: 2018年12月21日
-* author: dz
+ * Spring Mvc的配置
+ *createDate: 2018年12月21日
+ * author: dz
  * */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     private final static Logger LOG = Logger.getLogger(String.valueOf(WebAppInitializer.class));

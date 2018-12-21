@@ -1,11 +1,10 @@
 package com.dznfit.controller;
 
 import com.dznfit.entity.User;
-import com.dznfit.exception.PowerException;
+import com.dznfit.exception.CustomException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,16 +28,16 @@ public class PowerAspect {
     public void powerFilter(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.info("站住，Please I need to check you");
         User u = (User) httpSession.getAttribute("admin");
-        if (u != null){
+        if (u != null) {
             if (!u.getName().equals("dz")) {
                 logger.info("不得不得，您没有此权限");
-                throw new PowerException("您没有此功能权限");
-            }else{
+                throw new CustomException("您没有此功能权限");
+            } else {
                 logger.info("此用户为管理员");
 
                 joinPoint.proceed();//
             }
-        }else
-            throw new PowerException("没有此用户！");
+        } else
+            throw new CustomException("没有此用户！");
     }
 }

@@ -20,10 +20,11 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- *<p>Title: DruidDataSourceConfig.java</p>
- *<p>Description: 数据源属性配置</p>
- *<p>CreateDate: 2018年12月20日</p>
- *@author dz
+ * <p>Title: DruidDataSourceConfig.java</p>
+ * <p>Description: 数据源属性配置</p>
+ * <p>CreateDate: 2018年12月20日</p>
+ *
+ * @author dz
  */
 @Configuration
 @MapperScan(basePackages = "com.dznfit.dao")

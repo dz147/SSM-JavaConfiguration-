@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
+
+@ControllerAdvice
 @Controller
 @RequestMapping("/")
 public class LoginController {
@@ -44,9 +46,9 @@ public class LoginController {
         return "home";
     }
 
+
     @GetMapping(value = "/add")
     public String userAdd() {
-
         return "home";
     }
 }

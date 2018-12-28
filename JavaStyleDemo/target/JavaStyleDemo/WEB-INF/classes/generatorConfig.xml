@@ -26,7 +26,7 @@
 
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.dznfit.dao" targetProject="src/main/java"/>
         <!-- %为全部的表 -->
-        <table tableName="%">
+        <table tableName="News">
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="Mysql"/>
         </table>

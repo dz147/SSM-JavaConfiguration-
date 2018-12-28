@@ -1,7 +1,5 @@
 package com.dznfit.entity;
 
-import org.springframework.stereotype.Component;
-
 public class User {
     private Integer id;
 
@@ -13,6 +11,26 @@ public class User {
 
     public Integer getId() {
         return id;
+    }
+
+    public User() {
+    }
+
+    public User(Integer id, String name, String password, Integer permission) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.permission = permission;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", permission=" + permission +
+                '}';
     }
 
     public void setId(Integer id) {

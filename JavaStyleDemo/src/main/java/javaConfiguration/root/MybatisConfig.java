@@ -68,7 +68,7 @@ public class MybatisConfig {
         factoryBean.setMapperLocations(resolver.getResources("Mapper/*.xml"));
         return factoryBean;
     }
-
+    /* <!-- 事务管理器 对mybatis操作数据库事务控制，spring使用jdbc的事务控制类 -->*/
     @Bean("transactionManager")
     public DataSourceTransactionManager dataSourceTransactionManagerConfig() throws PropertyVetoException {
         DataSourceTransactionManager manager = new DataSourceTransactionManager();

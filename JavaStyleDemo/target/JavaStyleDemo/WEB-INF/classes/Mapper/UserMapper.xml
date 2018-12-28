@@ -36,7 +36,7 @@
     select id, name, password, permission
     from user
   </select>
-  <select id="selectByUser" parameterType="com.dznfit.entity.User" resultType="com.dznfit.entity.User">
+  <select id="selectByUser" parameterType="com.dznfit.entity.User" resultMap="BaseResultMap">
     select id, `name`, password, permission
     from user
     where `name` = #{name,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}

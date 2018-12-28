@@ -1,7 +1,9 @@
 package javaConfiguration;
 
 import javaConfiguration.root.MybatisConfig;
+import javaConfiguration.root.RedisConfig;
 import javaConfiguration.root.ShiroConfig;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
@@ -15,10 +17,14 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @ComponentScan(basePackages = {"com.dznfit.service"})
 @PropertySource("classpath:jdbc.properties")
-@Import({MybatisConfig.class, ShiroConfig.class})
+@PropertySource("classpath:redis.properties")
+@Import({MybatisConfig.class, ShiroConfig.class, RedisConfig.class})
 public class RootConfig {
+
     @Bean
     public static PropertySourcesPlaceholderConfigurer sourcesPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
+
+
 }

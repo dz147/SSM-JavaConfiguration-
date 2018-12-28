@@ -34,8 +34,7 @@ public class PowerAspect {
                 throw new CustomException("您没有此功能权限");
             } else {
                 logger.info("此用户为管理员");
-
-                joinPoint.proceed();//
+                joinPoint.proceed();
             }
         } else
             throw new CustomException("没有此用户！");
